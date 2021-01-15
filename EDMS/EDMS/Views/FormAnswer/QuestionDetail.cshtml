@@ -1,0 +1,258 @@
+﻿@model EDMSModel.QuestionAnswerModel
+@using EDMSBLL;
+@{
+    ViewBag.Title = "FormQuestionCollect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+    int i;
+
+}
+<div>
+    <h3>@Model.FormName</h3>
+</div>
+
+
+@using (Html.BeginForm("SaveQuestionAnswer", "FormAnswer", FormMethod.Post, new { id = "Answer-form" }))
+{
+    <div class="col-md-4">
+        @Html.LabelFor(x => x.SubmittedBy)
+        @Html.TextBoxFor(x => x.SubmittedBy, new { @class = "form-control", autocomplete = "off" })
+
+
+        @*@if (Model.SubmittedBy == null)
+        {
+            @Html.TextBoxFor(x => x.SubmittedBy, new { @class = "form-control" })
+        }
+        else
+        {
+            @Html.TextBoxFor(x => x.QuestionAnswerList[0].SubmittedBy, new { @class = "form-control" })
+
+        }*@
+    </div>
+
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    S.N.
+                    @Html.HiddenFor(model => model.FormName)
+                    @Html.HiddenFor(model => model.FormCategoryId)
+                    @Html.HiddenFor(model => model.Question)
+                    @Html.HiddenFor(model => model.AnswerId)
+                    @Html.HiddenFor(model => model.AnswerId)
+                    @Html.HiddenFor(model => model.FormCategoryId)
+                    @Html.HiddenFor(model => model.StudentId)
+                    @Html.HiddenFor(model => model.AnswerId)
+
+
+
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question)
+                </th>
+                <th>
+                    Answer
+                </th>
+                @if (Model.StudentId == null)
+                {
+                    <th>
+                        Marks
+                    </th>
+                }
+             
+            </tr>
+
+            @for (i = 0; i < Model.QuestionAnswerList.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @counter
+                        @Html.HiddenFor(x => Model.QuestionAnswerList[i].AnswerDetailID)
+                        @Html.HiddenFor(x => Model.QuestionAnswerList[i].FormQuestionId)
+
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(x => Model.QuestionAnswerList[i].Question)
+                    </td>
+                    <td>
+                        @{
+                            string ans = Model.QuestionAnswerList[i].Answer;
+
+                            switch (Model.QuestionAnswerList[i].InputName)
+                            {
+                                case "TextBox":
+                                    @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextBoxString")
+                                    break;
+
+                                case "Number":
+                                    //if (ans == null)
+                                    //{
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextBoxNumber")
+                                    //}
+                                    //else
+                                    //{
+                                    //    int NumAns = Convert.ToInt32(ans);
+                                    //    Model.QuestionAnswerList[i].Answer = NumAns;
+                                    //    @Html.EditorFor(x => NumAns, "TextBoxNumber")
+                                    //}
+                                    break;
+
+                                case "CheckBox":
+                                    @*if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "CheckBox")
+                                    }
+                                    else
+                                    {*@
+                                         @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "CheckBox")
+                                    //}
+                                    break;
+
+                                case "Select":
+                                    if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        ViewBag.DropDownList = new SelectList(CommonService.GetDropDownOptions(Model.QuestionAnswerList[i].FormQuestionId).Items, "DropDownId", "DropDownName");
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "DropDownList")
+                                    }
+                                    else
+                                    {
+                                        int selectedId = Convert.ToInt32(ans);
+                                        ViewBag.DropDownList = new SelectList(CommonService.GetDropDownOptions(Model.QuestionAnswerList[i].FormQuestionId).Items, "DropDownId", "DropDownName", selectedId);
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "DropDownList")
+                                    }
+                                    break;
+
+                                case "TextArea":
+                                    @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextArea")
+                                    break;
+
+                                case "Date":
+                                    if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        @Html.EditorFor(X => Model.QuestionAnswerList[i].Answer, "Date")
+                                    }
+                                    else
+                                    {
+                                        string dateTimeAns = string.Format("{0:yyyy-mm-dd}", ans);
+                                        @Html.EditorFor(X => dateTimeAns, "Date")
+                                    }
+                                    break;
+                                case "Files":
+                                    @Html.HiddenFor(model => model.FileChange)
+                                    @Html.HiddenFor(model => model.QuestionAnswerList[i].InputName)
+                                    @Html.HiddenFor(model => model.QuestionAnswerList[i].Question)
+                                    ViewBag.fileName = Model.QuestionAnswerList[i].Question.Replace(' ', '_');
+                                    if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "Files")
+                                    }
+                                    else
+                                    {
+                                        string[] answer = Model.QuestionAnswerList[i].Answer.Split(',');
+                                        ViewBag.answer = answer;
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "Files")
+                                    }
+                                    break;
+
+                            }
+                        }
+                    </td>
+                    @if (Model.StudentId == null)
+                    {
+               <td>
+
+                   @Html.TextBoxFor(model => model.QuestionAnswerList[i].Marks, new { @class = "total form-control" })
+                   @Html.ValidationMessageFor(model => model.QuestionAnswerList[i].Marks, "", new { @class = "good-total text-danger" })
+               </td>
+
+                    }
+                   
+                </tr>
+                counter++;
+            }
+
+
+        </table>
+    </div>
+    if (Model.StudentId == null)
+    {
+    <div class="grand-total-value item">
+        @Html.TextBoxFor(model => model.grandTotal, new { @readonly = true, @class = "total-number form-control text-right", Value = String.Format("{0:0.00}", Model.grandTotal) })
+        @Html.ValidationMessageFor(model => model.grandTotal)
+    </div>
+    }
+    <div class="btn-groups modal-footer">
+        <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save</button>
+    </div>
+}
+<script>
+
+    $(function () {
+
+        $('#Answer-form').ajaxForm({
+
+            beforeSubmit: function () {
+                $('#Answer-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#Answer-form'));
+                if ($("#Answer-form").valid()) {
+                    WorkForce.loader.show();
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                var studentId =parseInt($("#StudentId").val());
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    CalculateGrandTotal();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    debugger;
+                    if (studentId>0)
+                    {
+                        location.href = '@Url.Content("~/StudentLogin/StudentLogin?StudentId="+Model.StudentId)';
+
+                    }
+                    else
+                    {
+                     location.href = '@Url.Content("~/FormAnswer/FormAnswerIndex?FormId= " + Model.FormCategoryId)';
+
+                    }
+
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", result.Msg);
+                }
+
+
+            },
+            error: function () {
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+
+    function CalculateGrandTotal(e) {
+        debugger;
+        //if (e != null) {
+        //    //var quantity = $(e.target).closest('.indivisual-row').find('.total').val();
+        //    //$(e.target).closest('.indivisual-row').find('.total').val(Math.abs(quantity * rate));
+        //}
+
+        var grandTotal = 0;
+        $('.total').each(function () {
+            grandTotal += Number($(this).val());
+        });
+        $('.grand-total-value').html(grandTotal);
+    }
+
+    $(document).on('change', '.total', function (e) {
+        debugger;
+        CalculateGrandTotal(e);
+    });
+
+</script>

@@ -1,0 +1,60 @@
+﻿@using FormCollectionHelper
+@model EDMSModel.FormQuestionModel
+
+<tr class="indivisual-row table-body">
+    @using (Html.BeginCollectionItem("FormQuestionList"))
+    {
+        <td>
+            @ViewBag.Counter
+            @Html.HiddenFor(model => model.FormQuestionId)
+            @Html.HiddenFor(model => model.InputTypeId)
+            @Html.HiddenFor(model => model.FormCategoryId)
+        </td>
+        <td>
+            @Html.HiddenFor(model => model.Question)
+            @Html.TextAreaFor(model => model.Question, new { @readonly = true, @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.Question)
+        </td>
+        <td>
+            @Html.CheckBoxFor(model => model.IsNull, new { @onclick = "return false", @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.IsNull)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.InputName, new { @readonly = true, @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.InputName)
+        </td>
+        <td>
+            @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.DisplayOrder, new { @readonly = true, @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.DisplayOrder)
+        </td>
+        if (Model.FormQuestionId != 0)
+        {
+            <td>
+                <a href="#" onclick="EditQuestion(@Model.FormQuestionId)"><i class="fa fa-edit"></i>Edit</a>
+            </td>
+        }
+        if (Model.FormQuestionId == 0)
+        {
+            <td>
+                <button type="button" onclick="DeleteRow(this)" class="row-button btn btn-sm btn-danger btn-delete"><i class="fa fa-trash-o"></i> Remove</button>
+            </td>
+        }
+        if (Model.FormQuestionId != 0 && Model.InputName == "Select")
+        {
+            <td>
+                <a href='@Url.Action("AddDropDownOption","FormQuestion",new { @Model.FormQuestionId})'><i class="fa fa-plus"></i>DropDown Items</a>
+            </td>
+        }
+
+    }
+</tr>
+<script>
+    $(function () {
+        $('#question-table-div').scrollTop($('#question-table-div').prop('scrollHeight'));
+    })
+
+</script>

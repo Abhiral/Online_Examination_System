@@ -1,0 +1,134 @@
+﻿@model EDMSModel.StudentDetailModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeTop" data-dismiss="modal" aria-hidden="true">&times;</span>
+            <h4 class="modal-title">StudentDetail</h4>
+        </div>
+        @using (Html.BeginForm("CreateEditStudentDetail", "StudentDetail", FormMethod.Post, new { id = "account-sub-head-form" }))
+        {
+            <div class="modal-body">
+                <div class="content-box">
+
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.HiddenFor(model => model.StudentId)
+                            <div class="col-md-12">
+                                <div class="form-grop_padding">
+
+
+                                    @Html.LabelFor(model => model.Name)
+                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Name)
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-grop_padding">
+
+
+                                    @Html.LabelFor(model => model.Address)
+                                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Address)
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-grop_padding">
+
+
+                                    @Html.LabelFor(model => model.Contact)
+                                    @Html.TextBoxFor(model => model.Contact, new { @class = "form-control", Value=(Model.Contact>0 ? Model.Contact.ToString() : string.Empty), placeholder = "Enter" })
+                                    @Html.ValidationMessageFor(model => model.Contact)
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-12">
+                                <div class="form-grop_padding">
+
+
+                                    @Html.LabelFor(model => model.Class)
+                                    @Html.TextBoxFor(model => model.Class, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Class)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="btn-groups modal-footer">
+                @if (Model.StudentId == 0)
+                {
+
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i> Save</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i> Save Change</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $('#account-sub-head-form').ajaxForm({
+            beforeSubmit: function () {
+                $('#account-sub-head-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#account-sub-head-form'));
+                if ($("#account-sub-head-form").valid()) {
+                    debugger;
+
+                    WorkForce.loader.show();
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                debugger;
+
+                if (result) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    $('#student-admit-card-div').html(result);
+                    printBill();
+                 
+                  } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", result.Msg);
+                }
+
+
+            },
+            error: function () {
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+
+    function printBill() {
+        var printContent = document.getElementById("student-admit-card-div");
+        var num;
+        var uniqueName = new Date();
+        var windowName = 'Print' + uniqueName.getTime();
+        var printing = window.open(num, windowName);
+        printing.document.write(printContent.outerHTML);
+        printing.document.close();
+        printing.focus();
+        printing.print();
+        printing.close();
+
+    }
+
+
+</script>

@@ -1,0 +1,79 @@
+﻿
+@model EDMSModel.DropDownListModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeTop" data-dismiss="modal" aria-hidden="true">&times;</span>
+            <h4 class="modal-title">DropDown Detail </h4>
+        </div>
+        @using (Html.BeginForm("EditDropDownList", "FormQuestion", FormMethod.Post, new { id = "dropDown-form" }))
+        {
+            <div class="modal-body">
+                <div class="content-box">
+                    @Html.ValidationSummary(true)
+                   
+                    <div class="row">
+                        @Html.HiddenFor(model => model.FormQuestionId)
+                        @Html.HiddenFor(model => model.DropDownId)
+                        @Html.HiddenFor(model=>model.FormId)
+
+
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.DropDownName)
+                            @Html.TextAreaFor(model => model.DropDownName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DropDownName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-groups modal-footer">
+                <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save Change</button>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $('#dropDown-form').ajaxForm({
+            beforeSubmit: function () {
+                $('#dropDown-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#dropDown-form'));
+                if ($("#dropDown-form").valid()) {
+
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                debugger;
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/FormQuestion/AddDropDownOption?FormQuestionId=" + Model.FormQuestionId)';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error");
+                }
+            },
+            error: function () {
+                debugger;
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+                   
+
+</script>
+
+            

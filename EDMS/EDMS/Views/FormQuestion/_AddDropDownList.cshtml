@@ -1,0 +1,47 @@
+﻿@using FormCollectionHelper
+@model EDMSModel.DropDownListModel
+
+<tr class="indivisual-row table-body">
+    @using (Html.BeginCollectionItem("DropDownList"))
+    {
+
+        <td>
+            @ViewBag.Counter
+            @Html.HiddenFor(model => model.FormQuestionId)
+            @Html.HiddenFor(model => model.DropDownId)
+
+        </td>
+      
+        
+        <td>
+            @Html.TextBoxFor(model => model.DropDownName, new { @readonly = true, @class = "form-control " })
+            @Html.ValidationMessageFor(model => model.DropDownName)
+        </td>
+
+        <td>
+            @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </td>
+
+        if (Model.DropDownId != 0)
+        {
+            <td>
+                <a href="#" onclick="EditDropDownList(@Model.DropDownId)"><i class="fa fa-edit"></i>Edit</a>
+            </td>
+        }
+        if (Model.DropDownId == 0)
+        {
+            <td>
+                <button type="button" onclick="DeleteRow(this)" class="row-button btn btn-sm btn-danger btn-delete"><i class="fa fa-trash-o"></i> Remove</button>
+            </td>
+        }
+
+    }
+</tr>
+<script>
+        $(function () {
+            $('#dropdown-table-div').scrollTop($('#dropdown-table-div').prop('scrollHeight'));
+        })
+
+</script>
+

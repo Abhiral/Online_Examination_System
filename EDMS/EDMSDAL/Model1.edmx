@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DynamicFormModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DropDownList">
+          <Key>
+            <PropertyRef Name="DropDownId" />
+          </Key>
+          <Property Name="DropDownId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormQuestionId" Type="int" Nullable="false" />
+          <Property Name="DropDownName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormAnswer">
+          <Key>
+            <PropertyRef Name="AnswerId" />
+          </Key>
+          <Property Name="AnswerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormCategoryId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="SubmittedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormAnswerDetail">
+          <Key>
+            <PropertyRef Name="AnswerDetailID" />
+          </Key>
+          <Property Name="AnswerDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnswerId" Type="int" Nullable="false" />
+          <Property Name="FormQuestionId" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Marks" Type="int" />
+        </EntityType>
+        <EntityType Name="FormCategory">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SubjectId" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="FormQuestion">
+          <Key>
+            <PropertyRef Name="FormQuestionId" />
+          </Key>
+          <Property Name="FormQuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormCategoryId" Type="int" Nullable="false" />
+          <Property Name="InputTypeId" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" />
+          <Property Name="IsNull" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="InputType">
+          <Key>
+            <PropertyRef Name="InputTypeId" />
+          </Key>
+          <Property Name="InputTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InputName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StudentDetail">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contact" Type="bigint" Nullable="false" />
+          <Property Name="RegNumber" Type="int" />
+          <Property Name="Class" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="QuestionSetNo" Type="int" />
+        </EntityType>
+        <Association Name="FK_DropDownList_FormQuestion">
+          <End Role="FormQuestion" Type="Self.FormQuestion" Multiplicity="1" />
+          <End Role="DropDownList" Type="Self.DropDownList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormQuestion">
+              <PropertyRef Name="FormQuestionId" />
+            </Principal>
+            <Dependent Role="DropDownList">
+              <PropertyRef Name="FormQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswer_FormCategory">
+          <End Role="FormCategory" Type="Self.FormCategory" Multiplicity="1" />
+          <End Role="FormAnswer" Type="Self.FormAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="FormAnswer">
+              <PropertyRef Name="FormCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswerDetail_FormAnswer">
+          <End Role="FormAnswer" Type="Self.FormAnswer" Multiplicity="1" />
+          <End Role="FormAnswerDetail" Type="Self.FormAnswerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormAnswer">
+              <PropertyRef Name="AnswerId" />
+            </Principal>
+            <Dependent Role="FormAnswerDetail">
+              <PropertyRef Name="AnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswerDetail_FormQuestion">
+          <End Role="FormQuestion" Type="Self.FormQuestion" Multiplicity="1" />
+          <End Role="FormAnswerDetail" Type="Self.FormAnswerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormQuestion">
+              <PropertyRef Name="FormQuestionId" />
+            </Principal>
+            <Dependent Role="FormAnswerDetail">
+              <PropertyRef Name="FormQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormQuestion_FormCategory1">
+          <End Role="FormCategory" Type="Self.FormCategory" Multiplicity="1" />
+          <End Role="FormQuestion" Type="Self.FormQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="FormQuestion">
+              <PropertyRef Name="FormCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormQuestion_InputType">
+          <End Role="InputType" Type="Self.InputType" Multiplicity="1" />
+          <End Role="FormQuestion" Type="Self.FormQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InputType">
+              <PropertyRef Name="InputTypeId" />
+            </Principal>
+            <Dependent Role="FormQuestion">
+              <PropertyRef Name="InputTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentDetail_FormCategory">
+          <End Role="FormCategory" Type="Self.FormCategory" Multiplicity="0..1" />
+          <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="StudentDetail">
+              <PropertyRef Name="QuestionSetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DynamicFormModelStoreContainer">
+          <EntitySet Name="DropDownList" EntityType="Self.DropDownList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormAnswer" EntityType="Self.FormAnswer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormAnswerDetail" EntityType="Self.FormAnswerDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormCategory" EntityType="Self.FormCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormQuestion" EntityType="Self.FormQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InputType" EntityType="Self.InputType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DropDownList_FormQuestion" Association="Self.FK_DropDownList_FormQuestion">
+            <End Role="FormQuestion" EntitySet="FormQuestion" />
+            <End Role="DropDownList" EntitySet="DropDownList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswer_FormCategory" Association="Self.FK_FormAnswer_FormCategory">
+            <End Role="FormCategory" EntitySet="FormCategory" />
+            <End Role="FormAnswer" EntitySet="FormAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswerDetail_FormAnswer" Association="Self.FK_FormAnswerDetail_FormAnswer">
+            <End Role="FormAnswer" EntitySet="FormAnswer" />
+            <End Role="FormAnswerDetail" EntitySet="FormAnswerDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswerDetail_FormQuestion" Association="Self.FK_FormAnswerDetail_FormQuestion">
+            <End Role="FormQuestion" EntitySet="FormQuestion" />
+            <End Role="FormAnswerDetail" EntitySet="FormAnswerDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormQuestion_FormCategory1" Association="Self.FK_FormQuestion_FormCategory1">
+            <End Role="FormCategory" EntitySet="FormCategory" />
+            <End Role="FormQuestion" EntitySet="FormQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormQuestion_InputType" Association="Self.FK_FormQuestion_InputType">
+            <End Role="InputType" EntitySet="InputType" />
+            <End Role="FormQuestion" EntitySet="FormQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentDetail_FormCategory" Association="Self.FK_StudentDetail_FormCategory">
+            <End Role="FormCategory" EntitySet="FormCategory" />
+            <End Role="StudentDetail" EntitySet="StudentDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DynamicFormModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DynamicFormEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DropDownLists" EntityType="DynamicFormModel.DropDownList" />
+          <EntitySet Name="FormAnswers" EntityType="DynamicFormModel.FormAnswer" />
+          <EntitySet Name="FormAnswerDetails" EntityType="DynamicFormModel.FormAnswerDetail" />
+          <EntitySet Name="FormCategories" EntityType="DynamicFormModel.FormCategory" />
+          <EntitySet Name="FormQuestions" EntityType="DynamicFormModel.FormQuestion" />
+          <EntitySet Name="InputTypes" EntityType="DynamicFormModel.InputType" />
+          <EntitySet Name="StudentDetails" EntityType="DynamicFormModel.StudentDetail" />
+          <AssociationSet Name="FK_DropDownList_FormQuestion" Association="DynamicFormModel.FK_DropDownList_FormQuestion">
+            <End Role="FormQuestion" EntitySet="FormQuestions" />
+            <End Role="DropDownList" EntitySet="DropDownLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswer_FormCategory" Association="DynamicFormModel.FK_FormAnswer_FormCategory">
+            <End Role="FormCategory" EntitySet="FormCategories" />
+            <End Role="FormAnswer" EntitySet="FormAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswerDetail_FormAnswer" Association="DynamicFormModel.FK_FormAnswerDetail_FormAnswer">
+            <End Role="FormAnswer" EntitySet="FormAnswers" />
+            <End Role="FormAnswerDetail" EntitySet="FormAnswerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormAnswerDetail_FormQuestion" Association="DynamicFormModel.FK_FormAnswerDetail_FormQuestion">
+            <End Role="FormQuestion" EntitySet="FormQuestions" />
+            <End Role="FormAnswerDetail" EntitySet="FormAnswerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormQuestion_FormCategory1" Association="DynamicFormModel.FK_FormQuestion_FormCategory1">
+            <End Role="FormCategory" EntitySet="FormCategories" />
+            <End Role="FormQuestion" EntitySet="FormQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentDetail_FormCategory" Association="DynamicFormModel.FK_StudentDetail_FormCategory">
+            <End Role="FormCategory" EntitySet="FormCategories" />
+            <End Role="StudentDetail" EntitySet="StudentDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormQuestion_InputType" Association="DynamicFormModel.FK_FormQuestion_InputType">
+            <End Role="InputType" EntitySet="InputTypes" />
+            <End Role="FormQuestion" EntitySet="FormQuestions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DropDownList">
+          <Key>
+            <PropertyRef Name="DropDownId" />
+          </Key>
+          <Property Name="DropDownId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormQuestionId" Type="Int32" Nullable="false" />
+          <Property Name="DropDownName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FormQuestion" Relationship="DynamicFormModel.FK_DropDownList_FormQuestion" FromRole="DropDownList" ToRole="FormQuestion" />
+        </EntityType>
+        <EntityType Name="FormAnswer">
+          <Key>
+            <PropertyRef Name="AnswerId" />
+          </Key>
+          <Property Name="AnswerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="SubmittedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FormCategory" Relationship="DynamicFormModel.FK_FormAnswer_FormCategory" FromRole="FormAnswer" ToRole="FormCategory" />
+          <NavigationProperty Name="FormAnswerDetails" Relationship="DynamicFormModel.FK_FormAnswerDetail_FormAnswer" FromRole="FormAnswer" ToRole="FormAnswerDetail" />
+        </EntityType>
+        <EntityType Name="FormAnswerDetail">
+          <Key>
+            <PropertyRef Name="AnswerDetailID" />
+          </Key>
+          <Property Name="AnswerDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnswerId" Type="Int32" Nullable="false" />
+          <Property Name="FormQuestionId" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Marks" Type="Int32" />
+          <NavigationProperty Name="FormAnswer" Relationship="DynamicFormModel.FK_FormAnswerDetail_FormAnswer" FromRole="FormAnswerDetail" ToRole="FormAnswer" />
+          <NavigationProperty Name="FormQuestion" Relationship="DynamicFormModel.FK_FormAnswerDetail_FormQuestion" FromRole="FormAnswerDetail" ToRole="FormQuestion" />
+        </EntityType>
+        <EntityType Name="FormCategory">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SubjectId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="FormAnswers" Relationship="DynamicFormModel.FK_FormAnswer_FormCategory" FromRole="FormCategory" ToRole="FormAnswer" />
+          <NavigationProperty Name="FormQuestions" Relationship="DynamicFormModel.FK_FormQuestion_FormCategory1" FromRole="FormCategory" ToRole="FormQuestion" />
+          <NavigationProperty Name="StudentDetails" Relationship="DynamicFormModel.FK_StudentDetail_FormCategory" FromRole="FormCategory" ToRole="StudentDetail" />
+        </EntityType>
+        <EntityType Name="FormQuestion">
+          <Key>
+            <PropertyRef Name="FormQuestionId" />
+          </Key>
+          <Property Name="FormQuestionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="InputTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsNull" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="DropDownLists" Relationship="DynamicFormModel.FK_DropDownList_FormQuestion" FromRole="FormQuestion" ToRole="DropDownList" />
+          <NavigationProperty Name="FormAnswerDetails" Relationship="DynamicFormModel.FK_FormAnswerDetail_FormQuestion" FromRole="FormQuestion" ToRole="FormAnswerDetail" />
+          <NavigationProperty Name="FormCategory" Relationship="DynamicFormModel.FK_FormQuestion_FormCategory1" FromRole="FormQuestion" ToRole="FormCategory" />
+          <NavigationProperty Name="InputType" Relationship="DynamicFormModel.FK_FormQuestion_InputType" FromRole="FormQuestion" ToRole="InputType" />
+        </EntityType>
+        <EntityType Name="InputType">
+          <Key>
+            <PropertyRef Name="InputTypeId" />
+          </Key>
+          <Property Name="InputTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InputName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="FormQuestions" Relationship="DynamicFormModel.FK_FormQuestion_InputType" FromRole="InputType" ToRole="FormQuestion" />
+        </EntityType>
+        <EntityType Name="StudentDetail">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="Int64" Nullable="false" />
+          <Property Name="RegNumber" Type="Int32" />
+          <Property Name="Class" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="QuestionSetNo" Type="Int32" />
+          <NavigationProperty Name="FormCategory" Relationship="DynamicFormModel.FK_StudentDetail_FormCategory" FromRole="StudentDetail" ToRole="FormCategory" />
+        </EntityType>
+        <Association Name="FK_DropDownList_FormQuestion">
+          <End Type="DynamicFormModel.FormQuestion" Role="FormQuestion" Multiplicity="1" />
+          <End Type="DynamicFormModel.DropDownList" Role="DropDownList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormQuestion">
+              <PropertyRef Name="FormQuestionId" />
+            </Principal>
+            <Dependent Role="DropDownList">
+              <PropertyRef Name="FormQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswer_FormCategory">
+          <End Type="DynamicFormModel.FormCategory" Role="FormCategory" Multiplicity="1" />
+          <End Type="DynamicFormModel.FormAnswer" Role="FormAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="FormAnswer">
+              <PropertyRef Name="FormCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswerDetail_FormAnswer">
+          <End Type="DynamicFormModel.FormAnswer" Role="FormAnswer" Multiplicity="1" />
+          <End Type="DynamicFormModel.FormAnswerDetail" Role="FormAnswerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormAnswer">
+              <PropertyRef Name="AnswerId" />
+            </Principal>
+            <Dependent Role="FormAnswerDetail">
+              <PropertyRef Name="AnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormAnswerDetail_FormQuestion">
+          <End Type="DynamicFormModel.FormQuestion" Role="FormQuestion" Multiplicity="1" />
+          <End Type="DynamicFormModel.FormAnswerDetail" Role="FormAnswerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormQuestion">
+              <PropertyRef Name="FormQuestionId" />
+            </Principal>
+            <Dependent Role="FormAnswerDetail">
+              <PropertyRef Name="FormQuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormQuestion_FormCategory1">
+          <End Type="DynamicFormModel.FormCategory" Role="FormCategory" Multiplicity="1" />
+          <End Type="DynamicFormModel.FormQuestion" Role="FormQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="FormQuestion">
+              <PropertyRef Name="FormCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentDetail_FormCategory">
+          <End Type="DynamicFormModel.FormCategory" Role="FormCategory" Multiplicity="0..1" />
+          <End Type="DynamicFormModel.StudentDetail" Role="StudentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormCategory">
+              <PropertyRef Name="FormId" />
+            </Principal>
+            <Dependent Role="StudentDetail">
+              <PropertyRef Name="QuestionSetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormQuestion_InputType">
+          <End Type="DynamicFormModel.InputType" Role="InputType" Multiplicity="1" />
+          <End Type="DynamicFormModel.FormQuestion" Role="FormQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InputType">
+              <PropertyRef Name="InputTypeId" />
+            </Principal>
+            <Dependent Role="FormQuestion">
+              <PropertyRef Name="InputTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DynamicFormModelStoreContainer" CdmEntityContainer="DynamicFormEntities">
+          <EntitySetMapping Name="DropDownLists">
+            <EntityTypeMapping TypeName="DynamicFormModel.DropDownList">
+              <MappingFragment StoreEntitySet="DropDownList">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="DropDownName" ColumnName="DropDownName" />
+                <ScalarProperty Name="FormQuestionId" ColumnName="FormQuestionId" />
+                <ScalarProperty Name="DropDownId" ColumnName="DropDownId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormAnswers">
+            <EntityTypeMapping TypeName="DynamicFormModel.FormAnswer">
+              <MappingFragment StoreEntitySet="FormAnswer">
+                <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="FormCategoryId" ColumnName="FormCategoryId" />
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormAnswerDetails">
+            <EntityTypeMapping TypeName="DynamicFormModel.FormAnswerDetail">
+              <MappingFragment StoreEntitySet="FormAnswerDetail">
+                <ScalarProperty Name="Marks" ColumnName="Marks" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="FormQuestionId" ColumnName="FormQuestionId" />
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="AnswerDetailID" ColumnName="AnswerDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormCategories">
+            <EntityTypeMapping TypeName="DynamicFormModel.FormCategory">
+              <MappingFragment StoreEntitySet="FormCategory">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormQuestions">
+            <EntityTypeMapping TypeName="DynamicFormModel.FormQuestion">
+              <MappingFragment StoreEntitySet="FormQuestion">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="IsNull" ColumnName="IsNull" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="InputTypeId" ColumnName="InputTypeId" />
+                <ScalarProperty Name="FormCategoryId" ColumnName="FormCategoryId" />
+                <ScalarProperty Name="FormQuestionId" ColumnName="FormQuestionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InputTypes">
+            <EntityTypeMapping TypeName="DynamicFormModel.InputType">
+              <MappingFragment StoreEntitySet="InputType">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InputName" ColumnName="InputName" />
+                <ScalarProperty Name="InputTypeId" ColumnName="InputTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentDetails">
+            <EntityTypeMapping TypeName="DynamicFormModel.StudentDetail">
+              <MappingFragment StoreEntitySet="StudentDetail">
+                <ScalarProperty Name="QuestionSetNo" ColumnName="QuestionSetNo" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

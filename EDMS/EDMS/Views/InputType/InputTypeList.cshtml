@@ -1,0 +1,87 @@
+﻿@model EDMSModel.InputTypeModel
+
+@{
+    ViewBag.Title = "InputTypeList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+
+
+
+<div class="title clearfix">
+    <h3>InputType </h3>
+</div>
+<button id="inputTypeCreate" class="btn btn-add pull-right"><i class="fa fa-plus"></i> Add New</button>
+<div class="clearfix"></div>
+
+<div id="pop-up-div" class="modal fade" role="dialog">
+</div>
+<div class="content-table">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.InputTypeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InputName)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.InputTypeList)
+                {
+                    <tr>
+                        <td>
+                            @counter <a href="#" onclick="CreateNewFormCategory('@item.InputTypeId')"><i class="fa fa-edit"></i></a>
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InputName)
+                        </td>
+
+
+
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+
+   $('#inputTypeCreate').on('click', function () {
+       debugger;
+       CreateNewFormCategory()
+   });
+
+   function CreateNewFormCategory(id) {
+       $.ajax({
+           type: 'GET',
+           url: '@Url.Content("~/InputType/CreateEditInputTypeCategory")',
+           data: { InputTypeId: id },
+           success: function (result) {
+               $('#pop-up-div').html(result).modal({
+                   'show': true,
+                   'backdrop': 'static',
+                   'draggable':true
+               })
+
+           },
+           error: function () {
+
+           }
+       });
+   }
+
+
+</script>
+
+

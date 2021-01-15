@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Online Examination System</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/custom-css/side_menu.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/custom-css/datepicker.css" rel="stylesheet" />
+    <link href="~/Content/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Scripts/datepicker/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/datepicker/jquery.timepicker.css" rel="stylesheet" />
+    <link href="~/Content/toastr/loader.min.css" rel="stylesheet" />
+    <link href="~/Content/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+    <link href="~/Content/custom-css/custom.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.2.min.js"></script>
+    <script src="~/Scripts/jquery.form.min.js"></script>
+    <script src="~/Scripts/datepicker/jquery-ui.min.js"></script>
+    <script src="~/Scripts/datepicker/jquery.timepicker.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/toastr/toastr.min.js"></script>
+    <script src="~/Content/toastr/customalert.js"></script>
+    <script src="~/Content/toastr/WorkForce.js"></script>
+    <script src="~/Content/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+</head>
+<body>
+    @RenderSection("scripts", required: false)
+    <div class="loader-wrap"><span class="loader"><span></span><span></span><span></span><span></span><span></span></span></div>
+
+
+    <div id="header" class="clearfix">
+
+        <div class="col-md-12 col-sm-12">
+            <a href="#" id="loginButton" title="head menu"><i class="fa fa-bars"></i></a>
+            <div id="loginBox">
+                <nav class="navbar">
+                    <ul class="nav text-center">
+                        @*<li><i class="fa fa-graduation-cap fa-2x"></i></li>*@
+                        <li><b style="font-size:25px;"><a href="@Url.Content("~/Home/HomeIndex")">Online Examination System</a></b></li>
+                    </ul>
+                </nav>
+                <nav class="navbar">
+                    <ul class="nav text-right">
+                        <li><i class="fa fa-calendar-o"></i> @DateTime.Now.ToString("yyyy/MM/dd")</li>
+                        @*<li><a href="@Url.Action("", "")"><i class="fa fa-key" title="Change Password"></i>Change Password</a></li>*@
+                        <li><a href='@Url.Content("~/User/Logout")'><i class="fa fa-power-off" title="Logout"></i>Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-wrap" class="clearfix">
+        <div class="left-menu">
+            <div class="logo">
+                <a href="@Url.Action("", "")">
+                </a>
+            </div>
+            <div class="nav-side-menu">
+                <div class="brand"><span>Menu</span><i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i></div>
+                @*<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>*@
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content navbar-collapse sidebar-navbar-collapse collapse" aria-expanded="false">
+                        <li data-toggle="collapse" data-target="#set-up" class="nav-list collapsed">
+                            <a href="#"><i class="fa fa-cogs"></i>Master Setup <span class="arrow"></span></a>
+                            <ul class="sub-menu collapse" id="set-up">
+                                @*<li><a href='@Url.Content("~/Semester/SemesterIndex")'>Semester</a></li>
+                                    <li><a href='@Url.Content("~/Subject/SubjectIndex")'>Subject</a></li>
+                                    <li><a href="@Url.Content("~/SemSubject/SemSubjectIndex")">Semester Subject</a></li>
+                                    <li><a href="@Url.Content("~/EducationalYear/EducationalYearIndex")">Educational Year</a></li>*@
+
+                                <li><a href="@Url.Content("~/InputType/InputTypeList")">Input Type</a></li>
+                            </ul>
+                        </li>
+
+                        <li data-toggle="collapse" data-target="#user" class="nav-list collapsed">
+                            <a href="#"><i class="fa fa-users"></i>Form Category<span class="arrow"></span></a>
+                            <ul class="sub-menu collapse" id="user">
+                                @*<li><a href="@Url.Content("~/Teacher/TeacherIndex")">Teacher</a></li>
+                                    <li><a href='@Url.Content("~/Student/StudentIndex")'>Student</a></li>
+                                    <li><a href="@Url.Content("~/User/UserIndex")">User</a></li>*@
+
+                                <li><a href="@Url.Content("~/FormCategory/Index")">Form</a></li>
+                            </ul>
+                        </li>
+                        <li data-toggle="collapse" data-target="#student" class="nav-list collapsed">
+                            <a href="#"><i class="fa fa-student"></i>Student Detail<span class="arrow"></span></a>
+                            <ul class="sub-menu collapse" id="student">
+
+                                <li><a href="@Url.Content("~/StudentDetail/StudentDetailList")">StudentDetail</a></li>
+                                <li><a href="@Url.Content("~/StudentLogin/StudentLogin")">StudentLogin</a></li>
+
+                            </ul>
+                        </li>
+                    
+
+                        @*<li data-toggle="collapse" data-target="#assignment" class="nav-list collapsed">
+                                <a href="#"><i class="fa fa-tasks"></i>Assignment <span class="arrow"></span></a>
+                                <ul class="sub-menu collapse" id="assignment">
+                                    @if (Session["TeacherId"] != null)
+                                    {
+                                        <li><a href="@Url.Content("~/Assignment/TeacherAssignmentIndex")">Teacher Assignment</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@Url.Content("~/Assignment/StudentAssignmentIndex")">Student Assignment</a></li>
+                                    }
+                                </ul>
+                            </li>*@
+
+                    </ul>
+                </div>
+            </div>
+
+           
+        </div>
+
+        <div class="right-container">
+            @RenderSection("featured", required: false)
+            <section class="main-content clearfix">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <p>All right reserved. Copyright © @System.DateTime.Now.Year - <a href="https://mininginfosys.com.np/" target="_blank">Mining Infosys </a></p>
+    </div>
+
+    
+    <script>
+        $(function () {
+            $('.Date').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd"
+            });
+            $('.nepali-calendar').nepaliDatePicker({
+                npdMonth: true,
+                npdYear: true,
+            });
+            var button = $('#loginButton');
+            var box = $('#loginBox');
+            var form = $('#loginForm');
+            button.removeAttr('href');
+            button.mouseup(function (login) {
+                box.toggle();
+                button.toggleClass('active');
+            });
+            form.mouseup(function () {
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

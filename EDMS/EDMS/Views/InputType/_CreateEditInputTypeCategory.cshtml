@@ -1,0 +1,89 @@
+﻿@model EDMSModel.InputTypeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeTop" data-dismiss="modal" aria-hidden="true">&times;</span>
+            <h4 class="modal-title">Account Sub Head </h4>
+        </div>
+        @using (Html.BeginForm("CreateEditInputTypeCategory", "InputType", FormMethod.Post, new { id = "account-sub-head-form" }))
+        {
+            <div class="modal-body">
+                <div class="content-box">
+                   
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="row">
+                            @Html.HiddenFor(model => model.InputTypeId)
+                            <div class="col-md-12">
+                                <div class="form-grop_padding">
+
+
+                                    @Html.LabelFor(model => model.InputName)
+                                    @Html.TextBoxFor(model => model.InputName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.InputName)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="btn-groups modal-footer">
+                @if (Model.InputTypeId == 0)
+                {
+
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i> Save</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i> Save Change</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(function () {
+     
+        $('#account-sub-head-form').ajaxForm({
+
+            beforeSubmit: function () {
+                $('#account-sub-head-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#account-sub-head-form'));
+                if ($("#account-sub-head-form").valid()) {
+                    WorkForce.loader.show();
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/InputType/InputTypeList")';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", result.Msg);
+                }
+
+
+            },
+            error: function () {
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+
+
+    
+</script>

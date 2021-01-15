@@ -1,0 +1,137 @@
+﻿@model EDMSModel.FormAnswerModel
+@{
+    ViewBag.Title = "FormAnswerDetailCollect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+<h2>FormAnswerDetail</h2>
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                S.N.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormQuestionName)
+            </th>
+            <th>
+                Answer
+            </th>
+
+
+
+        </tr>
+
+        @foreach (var item in Model.FormQuestionList)
+        {
+            <tr>
+                <td>
+                    <a href="#" onclick="CreateNewSemSubject(@item.FormQuestionId"><i class="fa fa-edit"></i>@counter</a>
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+
+
+            </tr>
+            counter++;
+        }
+
+    </table>
+</div>
+<script>
+
+    $(function () {
+
+        $('#Answer-form').ajaxForm({
+
+            beforeSubmit: function () {
+                $('#Answer-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#Answer-form'));
+                if ($("#Answer-form").valid()) {
+                    WorkForce.loader.show();
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/FormAnswerDetail/FormAnswerDetailIndex")';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", result.Msg);
+                }
+
+
+            },
+            error: function () {
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+</script>
+<script>
+
+
+   $('#semsubcreate').on('click', function () {
+       debugger;
+       CreateNewSemSubject()
+   });
+
+   function CreateNewSemSubject(id) {
+       $.ajax({
+           type: 'GET',
+           url: '@Url.Content("~/SemSubject/CreateEditSemSubject")',
+           data: { SemSubjectID: id },
+           success: function (result) {
+               $('#pop-up-div').html(result).modal({
+                   'show': true,
+                   'backdrop': 'static',
+                   'draggable':true
+               })
+
+           },
+           error: function () {
+
+           }
+       });
+   }
+</script>
+<script>
+
+   $('#inputTypeCreate').on('click', function () {
+       debugger;
+       CreateNewFormCategory()
+   });
+
+   function CreateNewFormCategory(id) {
+       $.ajax({
+           type: 'GET',
+           url: '@Url.Content("~/InputType/CreateEditInputTypeCategory")',
+           data: { InputTypeId: id },
+           success: function (result) {
+               $('#pop-up-div').html(result).modal({
+                   'show': true,
+                   'backdrop': 'static',
+                   'draggable':true
+               })
+
+           },
+           error: function () {
+
+           }
+       });
+   }
+
+
+</script>
+
+

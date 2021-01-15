@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="87b69c74d5dd4ec5be099c9137c8a3de" Name="Diagram1">
+        <EntityTypeShape EntityType="DynamicFormModel.DropDownList" Width="1.5" PointX="5.25" PointY="2" />
+        <EntityTypeShape EntityType="DynamicFormModel.FormAnswer" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="DynamicFormModel.FormAnswerDetail" Width="1.5" PointX="5.25" PointY="5.875" />
+        <EntityTypeShape EntityType="DynamicFormModel.FormCategory" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="DynamicFormModel.FormQuestion" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="DynamicFormModel.InputType" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="DynamicFormModel.StudentDetail" Width="1.5" PointX="3" PointY="12.125" />
+        <AssociationConnector Association="DynamicFormModel.FK_DropDownList_FormQuestion" />
+        <AssociationConnector Association="DynamicFormModel.FK_FormAnswer_FormCategory" />
+        <AssociationConnector Association="DynamicFormModel.FK_FormAnswerDetail_FormAnswer" />
+        <AssociationConnector Association="DynamicFormModel.FK_FormAnswerDetail_FormQuestion" />
+        <AssociationConnector Association="DynamicFormModel.FK_FormQuestion_FormCategory1" />
+        <AssociationConnector Association="DynamicFormModel.FK_StudentDetail_FormCategory" />
+        <AssociationConnector Association="DynamicFormModel.FK_FormQuestion_InputType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

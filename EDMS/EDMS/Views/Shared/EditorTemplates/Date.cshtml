@@ -1,0 +1,26 @@
+﻿
+
+@model string
+
+
+<link href="~/Scripts/datepicker/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Scripts/datepicker/jquery.timepicker.css" rel="stylesheet" />
+<link href="~/Content/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.css" rel="stylesheet" />
+<script src="~/Content/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.js"></script>
+
+@Html.TextBoxFor(x => Model, new { @class = "form-control nepali-calendar",autocomplete="off" })
+
+<script>
+    $(function () {
+        $('.Date').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy-mm-dd"
+        });
+        $('.nepali-calendar').nepaliDatePicker({
+            npdMonth: true,
+            npdYear: true,
+        });
+    });
+
+</script>

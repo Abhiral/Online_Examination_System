@@ -1,0 +1,72 @@
+﻿@model string
+<input type="file" multiple accept="" name=@ViewBag.fileName id="filepicker">
+@if (ViewBag.answer != null)
+{
+    foreach (string ans in ViewBag.answer)
+    {
+
+        string[] fileExtension = ans.Split('.');
+        string extension = fileExtension.Last();
+        string[] filePath = ans.Split('_');
+        string fileName = filePath.Last();
+        string[] file = fileName.Split('.');
+        string files = file.First();
+        if (extension == "jpg" || extension == "png")
+        {
+            var anspath = Server.MapPath(ans);
+            <div class="col-md-12">
+                <img src="@Url.Content(ans)" alt=@fileName width="256" height="256">
+            </div>
+        }
+        <div class="col-md-6">
+            <div>
+                @Html.Label(files)
+            </div>
+            <div>
+                <a href='@Url.Content("~/FormAnswer/Download?fileLocation=" + ans)' target="_blank">Download File</a>
+            </div>
+        </div>
+    }
+}
+<script>
+   $('#filepicker').on('change', function () {
+       debugger;
+       $('#FileChange').val(true);
+       for (var i = 0; i < this.files.length; i++) {
+
+           if (this.files && this.files[i]) {
+               var chk = isDoc(this.files[i].name)
+               if (!chk) {
+                   alert('Invalid File Type!! Please select pdf or doc or image file!!');
+                   return;
+               }
+               var reader = new FileReader();
+               reader.onload = function (e) {
+                   debugger;
+               }
+               reader.readAsDataURL(this.files[i]);
+           }
+       }
+   });
+
+   function isDoc(filename) {
+       var ext = getExtension(filename);
+       switch (ext.toLowerCase()) {
+           case 'pdf':
+           case 'doc':
+           case 'docx':
+           case 'jpg':
+           case 'png':
+           case 'txt':
+
+               return true;
+       }
+       return false;
+   }
+
+   function getExtension(filename) {
+       var parts = filename.split('.');
+       return parts[parts.length - 1];
+   }
+
+</script>

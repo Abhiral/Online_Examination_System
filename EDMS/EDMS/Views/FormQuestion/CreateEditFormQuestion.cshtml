@@ -1,0 +1,213 @@
+﻿@model EDMSModel.FormQuestionModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+<div class="main-title">
+    <h2>FormName</h2>
+</div>
+<div class="modal fade" role="dialog" id="pop-up-div">
+</div>
+
+<div class="add-items">
+    <fieldset>
+        <legend>Add Question</legend>
+        <div>
+            @Html.HiddenFor(model => model.FormQuestionId)
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Question)
+                @Html.TextAreaFor(model => model.Question, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.IsNull)
+                @Html.CheckBoxFor(model => model.IsNull, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IsNull, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.InputName)
+                @Html.DropDownListFor(model => model.InputTypeId, ViewBag.InputTypeCollection as SelectList, "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.InputName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.DisplayOrder)
+                @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DisplayOrder, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-4 col-md-4 text-left">
+                <a class="btn btn-add" id="add-question-to-list"><i class="fa fa-plus"></i>Add</a>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="box-border">
+    @using (Html.BeginForm("CreateEditFormQuestion", "FormQuestion", FormMethod.Post, new { id = "formQuestion-form" }))
+    {
+        <div class="add-formQuestion-item-section">
+            @Html.HiddenFor(model => model.FormCategoryId)
+
+
+            <div class="purchase-items">
+                <fieldset>
+                    <legend>  Question List</legend>
+                    <div class="content-table">
+                        <div class="table-responsive">
+                            <table id="question-table-div" class="table table-bordered table-striped">
+                                <thead id="items-list" class="table-header" style="font-weight: 600;">
+                                    <tr>
+                                        <th>
+                                            SN.
+                                        </th>
+                                        <th>
+                                            Question
+                                        </th>
+                                        @*<th>
+                                            IsNull
+                                        </th>*@
+                                        <th>
+                                            Answer Type
+                                        </th>
+                                        @*<th>
+                                            Is Active
+                                        </th>*@
+                                        <th>
+                                            Display Order
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model.FormQuestionList != null)
+                                    {
+                                        int counter = 1;
+                                        foreach (var item in Model.FormQuestionList)
+                                        {
+                                            ViewBag.Counter = counter;
+                                            @Html.Partial("_AddQuestionToListView", item)
+                                            counter++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="btn-groups modal-footer">
+            <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save</button>
+        </div>
+    }
+</div>
+
+<script>
+    $(function () {
+
+        $('#formQuestion-form').ajaxForm({
+            beforeSubmit: function () {
+                $('#formQuestion-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#formQuestion-form'));
+                if ($("#formQuestion-form").valid()) {
+
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                debugger;
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/FormCategory/Index")';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error");
+                }
+            },
+            error: function () {
+                debugger;
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+
+    $('#add-question-to-list').on('click', function () {
+        WorkForce.loader.show();
+        var question = $('#Question').val();
+        var formId = $('#FormCategoryId').val();
+        var isNull = $('#IsNull').prop('checked');
+        var inputTypeId = $('#InputTypeId option:selected').val();
+        var displayOrder = $('#DisplayOrder').val();
+        var counter = $('#question-table-div').find('tr.indivisual-row').length;
+
+        debugger;
+
+        $.ajax({
+
+            type: 'GET',
+            url: '@Url.Content("~/FormQuestion/AddQuestionToListView")',
+            data: { displayOrder: displayOrder, question: question, isNull: isNull, inputTypeId: inputTypeId, counter: counter,formId:formId },
+            success: function (result) {
+                debugger;
+                if (result) {
+                    $('#question-table-div tbody').append(result);
+                    $('#Question').val('');
+                    $('#IsNull').val('');
+                    $('#DisplayOrder').val('');
+                    $('#InputTypeId').val('');
+                    WorkForce.loader.hide();
+                }
+            },
+            error: function (ex) {
+                debugger;
+                WorkForce.loader.hide();
+                console.log(ex);
+            }
+        });
+    });
+
+
+
+
+    function EditQuestion(id) {
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/FormQuestion/EditFormQuestion")',
+            data: { FormQuestionId: id },
+            success: function (result) {
+                $('#pop-up-div').html(result).modal({
+                    'show': true,
+                    'backdrop': 'static',
+                    'draggable':true
+                })
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    function DeleteRow(e) {
+        debugger;
+        var confirmValue = confirm("Are you sure to delete this Item ?");
+        if (confirmValue) {
+            $(e).closest('tr.indivisual-row').remove();
+            CalculateGrandTotal();
+        }
+    }
+
+
+</script>
+
+

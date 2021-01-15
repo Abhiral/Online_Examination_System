@@ -1,0 +1,12 @@
+﻿@model string
+            @Html.TextBoxFor(x=>Model,new {type="checkbox",@Value=Model, @class="checkboxes"})
+
+
+<script>
+    $(function () {
+        $('.checkboxes').on('change', function () {
+            $(this).val($(this).prop('checked'));
+        })
+    })
+</script>
+

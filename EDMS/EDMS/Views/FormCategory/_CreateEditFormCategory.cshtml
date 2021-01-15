@@ -1,0 +1,83 @@
+﻿@model EDMSModel.FormCategoryModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" id="closeTop" data-dismiss="modal" aria-hidden="true">&times;</span>
+            <h4 class="modal-title">Form Category </h4>
+        </div>
+        @using (Html.BeginForm("CreateEditFormCategory", "FormCategory", FormMethod.Post, new { id = "formCategory-form" }))
+        {
+            <div class="modal-body">
+                <div class="content-box">
+                    @Html.ValidationSummary(true)
+                    <div class="row">
+                        @Html.HiddenFor(model => model.FormId)
+
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.FormName)
+                            @Html.TextBoxFor(model => model.FormName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.FormName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-groups modal-footer">
+                @if (Model.FormId == 0)
+                {
+
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save Change</button>
+                }
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $('#formCategory-form').ajaxForm({
+            beforeSubmit: function () {
+                $('#formCategory-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#formCategory-form'));
+                if ($("#formCategory-form").valid()) {
+
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                debugger;
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/FormCategory/Index")';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error");
+                }
+
+
+            },
+            error: function () {
+                debugger;
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+
+
+</script>
+

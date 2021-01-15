@@ -1,0 +1,167 @@
+﻿/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+.right-container .col-md-12.no-padding-xs{
+        padding: 0;
+    }
+    .schedule-box img {
+        max-width: 100%;
+    }
+    .margin-top70 {
+        margin-top: 30px;
+    }
+
+    h2 img {
+        max-width: 70%;
+    }
+
+    #login-box {
+        width: 100%;
+        padding: 0;
+        margin: 10px auto 0;
+        border: none;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+    }
+
+        #login-box label, .info p {
+            margin: 0;
+        }
+
+    .input-group {
+        width: 100%;
+    }
+
+    #login-box .form-group {
+        margin-bottom: 0;
+    }
+
+    #btn-login {
+        border-radius: 0px;
+        padding: 3px 10px;
+        font-size: 13px;
+    }
+
+    /* End loing page css*/
+    #top-right-toggle {
+        position: absolute;
+        top: -40px;
+        right: 15px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.51);
+        padding: 4px 8px;
+        font-size: 1.6em;
+        cursor: pointer;
+    }
+
+    #top-right-menu {
+        border-top: 1px solid #ddd;
+        float: none;
+    }
+    .navbar-default .navbar-nav > li > a {
+        line-height: 1;
+    }
+    .nav-side-menu .brand {
+        color: #292929;
+        font-weight: 500;
+        font-size: 18px;
+        text-shadow: none;
+        padding-left: 10px;
+        line-height: 45px !important;
+    }
+
+    .nav-side-menu .toggle-btn {
+        top: 4px;
+    }
+
+    .nav-side-menu {
+        margin-top: -5px !important;
+        font-size:13px;
+        margin-bottom:0;
+    }
+
+        .nav-side-menu ul, .nav-side-menu li {
+            line-height: 26px;
+        }
+    #menu-content .nav-list.collapsed::before {
+        padding-top: 5px;
+    }
+    .right-container {
+        margin: 0;
+    }
+
+    .main-content {
+min-height: 350px;
+box-shadow: none;
+padding-top: 10px;
+    }
+    .title {
+        padding: 4px 10px;
+        margin-bottom:6px;
+    }
+    .title h3 {
+        font-size: 17px;
+        text-shadow: none;
+    }
+    .modal-header .modal-title {
+        line-height: 1.1;
+text-shadow: none;
+font-size: 17px;
+    }
+    .modal-header .close {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+    .btn-groups .btn,
+    .btn-add {
+        border-radius:1px;
+        padding: 1px 4px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .table-bordered > thead > tr > th,
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        padding: 1px 2px;
+    }
+.table-bordered > thead > tr > th{
+    font-size: 12px;
+}
+ .table > tbody > tr > td{
+        font-size: 11px;
+    }
+    label {
+        font-size: 11px;
+        margin-bottom:2px;
+    }
+    .form-control {
+        height: 20px;
+        padding: 1px 3px;
+        font-size: 12px;
+    }
+    .form-grop_padding {
+        margin-bottom: 5px;
+    }
+    .modal-body {
+        padding: 5px 8px;
+    }
+    .btn-groups {
+        padding-right: 6px;
+        padding-bottom: 0px;
+
+    }
+}

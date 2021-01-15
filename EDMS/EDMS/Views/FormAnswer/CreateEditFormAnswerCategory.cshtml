@@ -1,0 +1,54 @@
+﻿@model EDMSModel.FormAnswerModel
+@{
+    ViewBag.Title = "FormQuestionCollect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+<h2>FormAnswer</h2>
+
+<div class="search-sec, search-sec3">
+    @using (Html.BeginForm("CreateEditFormAnswerCategory", "FormAnswer", FormMethod.Post, new { id = "student-form" }))
+    {
+        @Html.HiddenFor(x => x.AnswerId)
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.FormName)
+            <div>
+                @Html.DropDownListFor(model => model.FormId, ViewBag.FormCategoryCollection as SelectList, "--Select--", new { @class = "form-contol" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" id="Search-Records" class="btn btn-add">Search</button>
+        </div>
+    }
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                S.N.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormQuestionName)
+            </th>
+          
+
+
+        </tr>
+
+        @foreach (var item in Model.FormQuestionList)
+        {
+            <tr>
+                <td>
+                    <a href="#" onclick="CreateNewSemSubject(@item.FormQuestionId"><i class="fa fa-edit"></i>@counter</a>
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.FormName)
+                </td>
+               
+            </tr>
+            counter++;
+        }
+
+    </table>
+</div>

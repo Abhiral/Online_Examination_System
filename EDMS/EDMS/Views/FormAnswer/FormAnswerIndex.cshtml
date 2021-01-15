@@ -1,0 +1,59 @@
+﻿@model EDMSModel.FormAnswerModel
+@{
+    ViewBag.Title = "FormCategoryIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+<div>
+    <h3>@Model.FormName</h3>
+</div>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                S.N.
+                @Html.HiddenFor(model => model.FormId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmittedBy)
+            </th>
+            <th>
+                Action
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+
+        @foreach (var item in Model.FormAnswerList)
+        {
+            <tr>
+                <td>
+                    @counter
+                    @Html.HiddenFor(modelItem => item.AnswerId)
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmittedBy)
+                </td>
+                <td>
+
+                    <a href='@Url.Content("~/FormAnswer/QuestionDetail?FormId="+Model.FormId+"&AnswerId="+item.AnswerId)'>Edit</a>
+
+                </td>
+                
+                <td>
+                    <div id="student-admit-card-div"></div>
+                    @item.grandTotal
+                </td>
+            </tr>
+            counter++;
+        }
+    </table>
+
+    @*<div class="btn-groups modal-footer">
+        <a href='@Url.Action("QuestionDetail","FormAnswer", new { Model.FormId})'>Add New</a>
+    </div>*@
+</div>

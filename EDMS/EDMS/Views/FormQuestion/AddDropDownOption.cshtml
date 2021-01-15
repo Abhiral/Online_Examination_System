@@ -1,0 +1,178 @@
+﻿@model EDMSModel.DropDownListModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+<div class="main-title">
+    <h2>FormName</h2>
+</div>
+<div class="modal fade" role="dialog" id="pop-up-div">
+</div>
+
+<div class="add-items">
+    <fieldset>
+        <legend>Add DropDown</legend>
+        <div>
+            @Html.HiddenFor(model => model.DropDownId)
+            @Html.HiddenFor(model=>model.FormId)
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.DropDownName)
+                @Html.TextAreaFor(model => model.DropDownName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DropDownName, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="col-sm-4 col-md-4 text-left">
+                <a class="btn btn-add" id="add-dropdown-to-list"><i class="fa fa-plus"></i>Add</a>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="box-border">
+    @using (Html.BeginForm("AddDropDownOption", "FormQuestion", FormMethod.Post, new { id = "dropdown-form" }))
+    {
+        <div class="add-formQuestion-item-section">
+            @Html.HiddenFor(model => model.FormQuestionId)
+
+
+            <div class="purchase-items">
+                <fieldset>
+                    <legend>  DropDown List</legend>
+                    <div class="content-table">
+                        <div class="table-responsive">
+                            <table id="dropdown-table-div" class="table table-bordered table-striped">
+                                <thead id="items-list" class="table-header" style="font-weight: 600;">
+                                    <tr>
+                                        <th>
+                                            SN.
+                                        <th>
+                                        <th>
+                                            DropDownList
+                                        <th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model.DropDownList != null)
+                                    {
+                                        int counter = 1;
+                                        foreach (var item in Model.DropDownList)
+                                        {
+                                            ViewBag.Counter = counter;
+                                            @Html.Partial("_AddDropDownList", item)
+                                            counter++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="btn-groups modal-footer">
+            <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save</button>
+        </div>
+    }
+</div>
+
+<script>
+        $(function () {
+
+            $('#dropdown-form').ajaxForm({
+                beforeSubmit: function () {
+                    $('#dropdown-form').removeData("validator").removeData("unobtrusiveValidation");
+                    $.validator.unobtrusive.parse($('#dropdown-form'));
+                    if ($("#dropdown-form").valid()) {
+
+                    } else {
+                        return false;
+                    }
+                },
+                success: function (result) {
+                    debugger;
+                    if (result.Success) {
+                        WorkForce.loader.hide();
+                        ShowMessage("success", "success", result.Msg);
+                        $('#pop-up-div').modal('hide');
+                        location.href = '@Url.Content("~/FormQuestion/CreateEditFormQuestion?FormId= "+ Model.FormId)';
+                    } else {
+                        WorkForce.loader.hide();
+                        ShowMessage("error", "error");
+                    }
+                },
+                error: function () {
+                    debugger;
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", "error in calling ajax!!");
+                }
+
+            });
+        });
+
+        $('#add-dropdown-to-list').on('click', function () {
+            WorkForce.loader.show();
+            var DropDownName = $('#DropDownName').val();
+            var counter = $('#dropdown-table-div').find('tr.indivisual-row').length;
+
+            debugger;
+
+            $.ajax({
+
+                type: 'GET',
+                url: '@Url.Content("~/FormQuestion/AddDropDownToList")',
+                data: { DropDownName: DropDownName, counter: counter},
+                success: function (result) {
+                    debugger;
+                    if (result) {
+                        $('#dropdown-table-div tbody').append(result);
+                        $('#DropDownName').val('');
+                        WorkForce.loader.hide();
+                    }
+                },
+                error: function (ex) {
+                    debugger;
+                    WorkForce.loader.hide();
+                    console.log(ex);
+                }
+            });
+        });
+
+
+
+
+    function EditDropDownList(id) {
+        debugger;
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Content("~/FormQuestion/EditDropDownList")',
+                data: { DropDownId: id },
+                success: function (result) {
+                    debugger;
+                    $('#pop-up-div').html(result).modal({
+                        'show': true,
+                        'backdrop': 'static',
+                        'draggable': true
+                    })
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+
+        function DeleteRow(e) {
+            debugger;
+            var confirmValue = confirm("Are you sure to delete this Item ?");
+            if (confirmValue) {
+                $(e).closest('tr.indivisual-row').remove();
+                CalculateGrandTotal();
+            }
+        }
+
+
+</script>

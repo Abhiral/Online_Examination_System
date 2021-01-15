@@ -1,0 +1,446 @@
+E:\EDMS Checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.csprojAssemblyReference.cache
+E:\EDMS Checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.csproj.CoreCompileInputs.cache
+E:\EDMS Checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\ApplicationInsights.config
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\csc.exe
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\System.Collections.Immutable.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\vbc.exe
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe.config
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMS.dll.config
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMS.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMS.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Antlr3.Runtime.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSBLL.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSDAL.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSModel.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EntityFramework.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EntityFramework.SqlServer.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Agent.Intercept.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Web.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.ApplicationInsights.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Web.Infrastructure.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Newtonsoft.Json.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Owin.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Helpers.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Mvc.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Optimization.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Razor.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Deployment.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Razor.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\WebGrease.dll
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSBLL.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSDAL.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSDAL.dll.config
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EDMSModel.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EntityFramework.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\EntityFramework.SqlServer.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Web.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.ApplicationInsights.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Helpers.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Mvc.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Optimization.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.Razor.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Deployment.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Razor.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Antlr3.Runtime.pdb
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Newtonsoft.Json.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\EDMS Checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.csproj.CopyComplete
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\ApplicationInsights.config
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\csc.exe
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\System.Collections.Immutable.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\vbc.exe
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe.config
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMS.dll.config
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMS.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMS.pdb
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Antlr3.Runtime.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSBLL.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSDAL.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSModel.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EntityFramework.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EntityFramework.SqlServer.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Agent.Intercept.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Web.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.ApplicationInsights.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Web.Infrastructure.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Newtonsoft.Json.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Owin.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Helpers.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Mvc.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Optimization.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Razor.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Deployment.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Razor.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\WebGrease.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSBLL.pdb
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSDAL.pdb
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EDMSModel.pdb
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EntityFramework.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\EntityFramework.SqlServer.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.Web.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.ApplicationInsights.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Helpers.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Mvc.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Optimization.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.Razor.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Deployment.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\System.Web.WebPages.Razor.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Antlr3.Runtime.pdb
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Newtonsoft.Json.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\dynamic form new checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.csprojResolveAssemblyReference.cache
+E:\dynamic form new checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.dll
+E:\dynamic form new checkout\trunk\EDMS\EDMS\obj\Debug\EDMS.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\ApplicationInsights.config
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\csc.exe
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMS.dll.config
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMS.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMS.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSModel.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EntityFramework.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Owin.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\WebGrease.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.dll.config
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EDMSModel.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EntityFramework.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.pdb
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.csprojAssemblyReference.cache
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.csproj.CopyComplete
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.dll
+C:\Users\user\Desktop\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\ApplicationInsights.config
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\csc.exe
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Collections.Immutable.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Reflection.Metadata.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\vbc.exe
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe.config
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.dll.config
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSModel.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Web.Infrastructure.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Owin.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\WebGrease.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSModel.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.dll
+E:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.pdb
+E:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.csprojResolveAssemblyReference.cache
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\ApplicationInsights.config
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\csc.exe
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Collections.Immutable.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\System.Reflection.Metadata.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\vbc.exe
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\roslyn\VBCSCompiler.exe.config
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.dll.config
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMS.pdb
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSModel.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Web.Infrastructure.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Owin.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\WebGrease.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSBLL.pdb
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSDAL.pdb
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EDMSModel.pdb
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\EntityFramework.SqlServer.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.DependencyCollector.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.Web.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AI.WindowsServer.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.ApplicationInsights.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Helpers.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Mvc.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Optimization.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.Razor.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Deployment.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\System.Web.WebPages.Razor.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Antlr3.Runtime.pdb
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Newtonsoft.Json.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Google.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.csprojResolveAssemblyReference.cache
+F:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.dll
+F:\Office works\office works\EDMS\EDMS\EDMS\obj\Debug\EDMS.pdb

@@ -1,0 +1,85 @@
+﻿@model EDMSModel.FormCategoryModel
+
+@{
+    ViewBag.Title = "FormCategoryIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+<h2>Form Category</h2>
+<button id="formCategoryCreate" class="btn btn-add pull-right"><i class="fa fa-plus"></i>Add New</button>
+<div class="clearfix"></div>
+
+<div class="modal fade" role="dialog" id="pop-up-div">
+
+</div>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                S.N.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormName)
+            </th>
+            <th>
+                Action
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model.FormCategoryModelList)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(modelItem => item.FormId)
+                    <a href="#" onclick="CreateNewFormCategory(@item.FormId)"><i class="fa fa-edit"></i> @counter</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormName)
+                </td>
+                <td>
+                    <a href='@Url.Action("CreateEditFormQuestion","FormQuestion", new {item.FormId})'>Details</a>
+                </td>
+                <td>
+                    <a href='@Url.Action("FormAnswerIndex","FormAnswer",new { item.FormId})'><i class="fa fa-reply"></i>Answer</a>
+                </td>
+            </tr>
+            counter++;
+        }
+
+    </table>
+</div>
+
+
+<script>
+
+    $('#formCategoryCreate').on('click', function () {
+        debugger;
+        CreateNewFormCategory()
+    });
+
+    function CreateNewFormCategory(id) {
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Content("~/FormCategory/CreateEditFormCategory")',
+            data: { FormId: id },
+            success: function (result) {
+                $('#pop-up-div').html(result).modal({
+                    'show': true,
+                    'backdrop': 'static',
+                    'draggable':true
+                })
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+</script>
+
+
+
+

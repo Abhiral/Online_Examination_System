@@ -1,0 +1,102 @@
+﻿@model EDMSModel.StudentDetailModel
+@using EDMSBLL
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admit Card</title>
+    <style type="text/css">
+        .container {
+            width: 1140px;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .width560px {
+            width: 560px;
+            max-width: 100%;
+        }
+
+        .left-right-side {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+        }
+
+            .left-right-side .left,
+            .left-right-side .right {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+        .list-sty > li {
+            margin-bottom: 10px;
+        }
+
+            .list-sty > li > b {
+                padding-right: 10px;
+            }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .signature > span {
+            display: block;
+        }
+
+        .m-b5 {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-form-table">
+        <div class="container">
+            <h3 class="title text-center">Invoice</h3>
+            <div class="left-right-side">
+                <div class="left">
+                    <ul class="list-sty">
+                        <li><b>Student Name : @Model.Name</b></li>
+                        <li><b>Address : </b> @Model.Address</li>
+
+                        <li><b>Registration Number: @Model.StudentId</b></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="signature text-right">
+                <span>...........................</span>
+                <span><b>Authorized Signature</b></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

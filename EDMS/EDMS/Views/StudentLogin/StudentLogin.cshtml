@@ -1,0 +1,97 @@
+﻿@model EDMSModel.StudentDetailModel
+
+
+
+@{
+    ViewBag.Title = "Student Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.2.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/custom-css/login.css" rel="stylesheet" type="text/css" />
+<body>
+    <div class="bodywrap">
+        <div class="login-wrap">
+     
+            @using (Html.BeginForm("StudentLogin", "StudentLogin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", @id = "loginform" }))
+            {
+                @Html.AntiForgeryToken()
+
+
+                @Html.ValidationSummary(true)
+
+
+                <div id="login-box">
+                    <div class="panel panel-login">
+                        <div class="panel-heading">
+                            <div class="panel-title">Login to your account</div>
+                        </div>
+                        <div style="padding-top: 10px" class="panel-body">
+                            <div style="display: none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <div class="row">
+                                <div class="col-sm-12 login-input">
+
+                                    <div class="input-group">
+                                        <i class="fa fa-user"></i>
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "User Name" })
+                                        @Html.ValidationMessageFor(m => m.Name)
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 login-psw">
+
+                                    @*@Html.LabelFor(m => m.Password)*@
+                                    <div class="input-group">
+                                        <i class="fa fa-lock"></i>
+                                        @Html.PasswordFor(m => m.StudentId, new { @id = "login-password", @class = "form-control", @placeholder = "Password" })
+                                        @Html.ValidationMessageFor(m => m.StudentId)
+                                       
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Button -->
+
+                            <div class="col-md-12 text-center controls">
+                                <button type="submit" class="btn btn-danger btn-sm" id="btn-login">Login <i class="fa fa-paper-plane-o"></i></button>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+            <div class="clearfix copyright-info text-center">
+                <p>
+                    Copyright &copy; 2020 ,<a href="http:/fnclick.com.np">Abhiral</a>, All Rights Reserved.<br>
+                    For Technical Support <a href="mailto:abhiraldhakal@gmail.com">abhiraldhakal@gmail.com</a>
+                </p>
+            </div>
+            <div class="clearfix copyright-info text-center">
+                    <p class="message-success">@ViewBag.QuestionSetMessage</p>
+                    <p class="message-success">@ViewBag.LoginMessage</p>
+                <p class="message-success">@ViewBag.Thankyou</p>
+
+                   </div>
+            </div>
+    </div>
+
+</body>
+
+<script>
+
+    $(function () {
+
+        $('#login-password').on('paste', function (e) {
+            e.preventDefault();
+            alert("Password Field Cannot be Pasted");
+        });
+    });
+
+</script>

@@ -1,0 +1,152 @@
+﻿@model EDMSModel.QuestionAnswerModel
+@{
+    ViewBag.Title = "FormQuestionCollect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+    int i;
+}
+
+<h2>FormAnswer</h2>
+
+
+@using (Html.BeginForm("SaveQuestionAnswer", "FormAnswer", FormMethod.Post, new { id = "Answer-form" }))
+{
+    <div class="col-md-4">
+        @Html.LabelFor(x => x.SubmittedBy)
+        @Html.TextBoxFor(x => x.QuestionAnswerList[0].SubmittedBy, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SubmittedBy)
+    </div>
+
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    S.N.
+                    @Html.HiddenFor(Model => Model.FormCategoryId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question)
+                </th>
+                <th>
+                    Answer
+                </th>
+            </tr>
+
+            @for (i = 0; i < Model.QuestionAnswerList.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @counter
+                        @Html.HiddenFor(x => Model.QuestionAnswerList[i].AnswerDetailID)
+                        @Html.HiddenFor(x => Model.QuestionAnswerList[i].FormQuestionId)
+
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(x => Model.QuestionAnswerList[i].Question)
+                    </td>
+                    <td>
+                        @{
+                            string ans = Model.QuestionAnswerList[i].Answer;
+
+                            switch (Model.QuestionAnswerList[i].InputName)
+                            {
+                                case "TextBox":
+                                    @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextBoxString")
+                                    break;
+
+                                case "Number":
+                                    if (ans == null)
+                                    {
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextBoxNumber")
+                                    }
+                                    else
+                                    {
+                                        int NumAns = Convert.ToInt32(ans);
+                                        @Html.EditorFor(x => NumAns, "TextBoxNumber")
+                                    }
+                                    break;
+
+                                case "CheckBox":
+                                    if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "CheckBox")
+                                    }
+                                    else
+                                    {
+                                        bool CheckBoxAns = Convert.ToBoolean(ans);
+                                        @Html.EditorFor(x => CheckBoxAns, "CheckBox")
+                                    }
+                                    break;
+
+                                case "Select":
+                                    TempData["dropdownoptions"] = "select list";
+                                    @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "DropDownList")
+                                    break;
+
+                                case "TextArea":
+                                    @Html.EditorFor(x => Model.QuestionAnswerList[i].Answer, "TextArea")
+                                    break;
+
+                                case "Date":
+                                    if (Model.QuestionAnswerList[i].Answer == null)
+                                    {
+                                        @Html.EditorFor(X => Model.QuestionAnswerList[i].Answer, "Date")
+                                    }
+                                    else
+                                    {
+                                        DateTime dateTimeAns = Convert.ToDateTime(ans).Date;
+                                        @Html.EditorFor(X => dateTimeAns, "Date")
+                                    }
+                                    break;
+                            }
+                        }
+                    </td>
+
+                </tr>
+                counter++;
+            }
+
+        </table>
+    </div>
+
+    <div class="btn-groups modal-footer">
+        <button type="submit" class="btn btn-primary btn-save"><i class="fa fa-save"></i>Save</button>
+    </div>
+}
+<script>
+
+    $(function () {
+
+        $('#Answer-form').ajaxForm({
+
+            beforeSubmit: function () {
+                $('#Answer-form').removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($('#Answer-form'));
+                if ($("#Answer-form").valid()) {
+                    WorkForce.loader.show();
+                } else {
+                    return false;
+                }
+            },
+            success: function (result) {
+                if (result.Success) {
+                    WorkForce.loader.hide();
+                    ShowMessage("success", "success", result.Msg);
+                    $('#pop-up-div').modal('hide');
+                    location.href = '@Url.Content("~/FormCategory/Index")';
+                } else {
+                    WorkForce.loader.hide();
+                    ShowMessage("error", "error", result.Msg);
+                }
+
+
+            },
+            error: function () {
+                WorkForce.loader.hide();
+                ShowMessage("error", "error", "error in calling ajax!!");
+            }
+
+        });
+    });
+</script>
